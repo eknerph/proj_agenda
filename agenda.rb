@@ -10,9 +10,15 @@
 def todos_contatos
   @ agenda.each do |contato|
     puts "#{contato[:nome]} - #{contato[:telefone]}"
-    puts "-----------------------------------------"
   end
+  puts "-----------------------------------------"
 end
+
+def adicionar_contato
+  print "Nome:"
+  nome = gets.chomp
+  print "Telefone: "
+  telefone = gets.chomp
 
 loop do
 
@@ -24,7 +30,9 @@ puts "1. Contatos\n2. Adicinar Contato\n3. Editar Contato\n4. Remover Contato\n5
     puts "Até mais!"
     break
   when codigo == 1    
-    todos_contatos    
+    todos_contatos   
+  when codigo == 2
+    adicinar_contato
   end
 
 end
