@@ -7,7 +7,12 @@
   {nome: "Julice", telefone: "21 98567-5580"}
 ]
 
-
+def todos_contatos
+  @ agenda.each do |contato|
+    puts "#{contato[:nome]} - #{contato[:telefone]}"
+    puts "-----------------------------------------"
+  end
+end
 
 loop do
 
@@ -17,7 +22,9 @@ puts "1. Contatos\n2. Adicinar Contato\n3. Editar Contato\n4. Remover Contato\n5
   case
   when codigo == 0
     puts "Até mais!"
-    break         
+    break
+  when codigo == 1    
+    todos_contatos    
   end
 
 end
